@@ -1,4 +1,5 @@
 import pygame
+import os
 
 #-*- coding:utf-8 -*-
 
@@ -16,10 +17,11 @@ screen = pygame.display.set_mode(screen_size)
 pygame.mouse.set_visible(False)
 
 #---- image ----#
-image1 = pygame.image.load("C:\\Users\\LEE\\Desktop\\PopCat_Meme_Desktop\\1.png")
-image2 = pygame.image.load("C:\\Users\\LEE\\Desktop\\PopCat_Meme_Desktop\\2.png")
-image3 = pygame.image.load("C:\\Users\\LEE\\Desktop\\PopCat_Meme_Desktop\\3.png")
-image4 = pygame.image.load("C:\\Users\\LEE\\Desktop\\PopCat_Meme_Desktop\\4.png")
+on = os.getcwd()
+image1 = pygame.image.load(os.path.abspath("icon\\1.png"))
+image2 = pygame.image.load(os.path.abspath("icon\\2.png"))
+image3 = pygame.image.load(os.path.abspath("icon\\3.png"))
+image4 = pygame.image.load(os.path.abspath("icon\\4.png"))
 pygame.display.set_icon(image1)
 
 #---- FPS ----#
