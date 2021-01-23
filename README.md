@@ -1,4 +1,4 @@
 # PopCat!
 
 
-## Exe Download Link : https://url.kr/1mzuj8
+## Exe Download Link : https://ligwa.tistory.com/2
