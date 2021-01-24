@@ -3,7 +3,7 @@ import os
 
 #-*- coding:utf-8 -*-
 
-#pyinstaller --onefile --icon=icon.ico -w --hidden-import=pygame cat.py
+#pyinstaller --icon=icon\\icon.ico -w --hidden-import=pygame cat.py
 
 #---- reset ----#
 pygame.init()
@@ -24,6 +24,10 @@ image3 = pygame.image.load(os.path.abspath("icon\\3.png"))
 image4 = pygame.image.load(os.path.abspath("icon\\4.png"))
 pygame.display.set_icon(image1)
 
+#---- sound ----#
+sound1 = pygame.mixer.Sound(os.path.abspath("sound\\1.wav"))
+sound2 = pygame.mixer.Sound(os.path.abspath("sound\\2.wav"))
+
 #---- FPS ----#
 FPS = 60
 CLOCK = pygame.time.Clock()
@@ -40,6 +44,7 @@ while not crashed:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE or event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 condition += 1
+                sound2.play()
             elif event.key == pygame.K_z or event.key == pygame.K_LEFT:
                 if condition == 1 or condition == 2:
                     condition += 2
@@ -52,6 +57,7 @@ while not crashed:
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_SPACE or event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 condition -= 1
+                sound1.play()
 
     if condition == 1:
         screen.blit(image1, (0, 0))
