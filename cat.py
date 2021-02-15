@@ -1,5 +1,6 @@
-import pygame
 import os
+import pypresence
+import pygame
 
 #-*- coding:utf-8 -*-
 
@@ -8,6 +9,8 @@ import os
 #---- reset ----#
 pygame.init()
 pygame.display.set_caption("PopCat")
+rpc = Presence("DISCORD APP ID")
+rpc.connect()
 
 #---- screen ----#
 screen_size_1 = 512
@@ -104,5 +107,6 @@ while not crashed:
 
     pygame.display.update()
     CLOCK.tick(FPS)
+    rpc.update(state="PopCat", detalis="POP!", large_image="POP", start=ester" 번")
 
 pygame.quit()
